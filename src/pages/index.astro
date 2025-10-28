@@ -1,14 +1,235 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import hero from "../assets/images/herobillede.webp";
+import tog from "../assets/images/tog.webp";
+import orangeBolger from "../assets/images/orangebolger.webp";
+import orangeBolger2 from "../assets/images/orangebolger2.webp";
+import fly from "../assets/images/fly.webp";
+import trustpilot from "../assets/images/trustpilot.webp";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 <MainLayout title="HÖJSKOLEN">
-	<main class="container mx-auto p-4">
-		<h1 class="Helvetica">HAlla halla</h1>
+	<main class="relative h-50">
+		<!-- HERO -->
+		<section class="relative h-screen w-full bg-black">
+			<!-- background image fills 100vh and is cropped (object-cover) -->
+			<div class="absolute inset-0">
+				<img src={hero.src} alt="Højskolen - rejser" class="w-full h-full object-cover object-center" />
+			</div>
+		
+			
+			<!-- Price overview buttons positioned at the bottom -->
+			<div class="absolute inset-x-0 bottom-32 flex justify-center items-center gap-50 px-4">
+				<Button variant="primary" size="large" aria-label="Overblik over priser">VÆLG DIT EVENTYR</Button>
+				<Button variant="primary" size="large" aria-label="Overblik over priser">TILMELD DIG HER</Button>
+			</div>
+		</section>
+
+		<!-- DIT LIVS EVENTYR SECTION -->
+		<section class="container mx-auto px-4 py-16 md:py-24">
+			<div class="grid md:grid-cols-12 gap-8">
+				<div class="md:col-span-5 relative">
+					<div class="h-full flex">
+						<img 
+							src={tog.src} 
+							alt="Placeholder - will be replaced with train journey image" 
+							class="w-full object-cover rounded-lg self-start max-h-[600px]"
+						/>
+					</div>
+				</div>
+				<div class="md:col-span-7">
+					<h2>DIT LIVS EVENTYR</h2>
+					<p class="mb-12">HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.
+<br><br>
+HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab, vil med på et fantastisk rejseeventyr, glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk, drømmer om en fed grupperejse med andre skønne unge, vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning. Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.
+<br><br>
+Vi glæder os til at lære dig at kende!
+</p>
+					<Button variant="primary" size="large">VÆLG DIT EVENTYR</Button>
+				</div>
+			</div>
+		</section>
+
+		<!-- TAG PÅ HØJSKOLE I UDLANDET SECTION -->
+		<section class="container mx-auto px-4 py-16 md:py-24">
+			<div class="mb-12">
+				<h2 class="mb-6">TAG PÅ HØJSKOLE I UDLANDET</h2>
+				<p class="mb-4">Når du rejser på højskole i udlandet med HÖJSKOLENDK...</p>
+			</div>
+
+			<div class="grid md:grid-cols-10 gap-8 items-start">
+				<div class="md:col-span-4">
+					<p class="mb-8">Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet – hvad du virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge dine drømme.</p>
+					
+					<p class="mb-8">Gå på opdagelse her på siden efter dit livs eventyr – på højskole i udlandet med HÖJSKOLENDK.</p>
+					
+					<p>Velkommen!</p>
+					
+				</div>
+
+				<div class="md:col-span-6 relative overflow-hidden">
+					<div class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory">
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 1" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 2" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 3" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+						<div class="flex-none w-[400px] snap-center">
+							<img src={tog.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- HVOR EVENTYR MØDER FÆLLESSKAB SECTION -->
+		<section class="relative">
+			<div class="relative">
+				<!-- Background image with waves -->
+				<img 
+					src={orangeBolger.src} 
+					alt="" 
+					class="w-full h-auto"
+					aria-hidden="true"
+				/>
+				
+				<!-- Content overlay -->
+				<div class="absolute inset-0 flex flex-col items-center justify-center">
+					<div class="container mx-auto px-4">
+						<h2 class="text-black text-center mb-16">HVOR EVENTYR MØDER FÆLLESSKAB</h2>
+						
+						<!-- Video container with 16:9 aspect ratio -->
+						<div class="max-w-6xl mx-auto relative aspect-video rounded-lg overflow-hidden">
+							<video 
+								class="absolute inset-0 w-full h-full object-cover"
+								controls
+								poster={tog.src}>
+								<source src="/placeholder.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- REJSE HØJSKOLE SECTION -->
+		<section class="container mx-auto px-4 py-16 md:py-24">
+			<div class="grid md:grid-cols-12 gap-8 items-center">
+				<div class="md:col-span-7">
+					<h2 class="mb-8">REJSE HØJSKOLE</h2>
+					<div class="space-y-6">
+						<p>Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og aktivt forener det lærende med det legende.</p>
+						
+						<p>Vores elever beskriver HÖJSKOLENDK som "eventyrlige dannelsesrejser med noget på hjerte". Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere med på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.</p>
+						
+						<p>Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</p>
+					</div>
+				</div>
+				<div class="md:col-span-5">
+					<img 
+						src={fly.src} 
+						alt="Orange illustration af fly" 
+						class="w-full h-auto"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- SE HVAD VORES REJSENDE SIGER OM OS SECTION -->
+		<section class="relative">
+			<div class="relative">
+				<!-- Background with waves -->
+				<img 
+					src={orangeBolger2.src} 
+					alt="" 
+					class="w-full h-auto"
+					aria-hidden="true"
+				/>
+				
+				<!-- Content overlay -->
+				<div class="absolute inset-0 flex flex-col justify-center">
+					<div class="container mx-auto px-4">
+						<h2 class="text-black font-bold leading-tight mb-12">SE HVAD VORES REJSENDE SIGER OM OS</h2>
+						<div class="grid md:grid-cols-2 gap-8 items-center">
+							<div class="space-y-6">
+								<!-- Trustpilot score -->
+								<div class="flex flex-col items-start gap-2">
+									<img src={trustpilot.src} alt="Trustpilot logo" class="h-52" />
+									<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" 
+									   target="_blank" 
+									   rel="noopener noreferrer" 
+									   class="text-3xl hover:underline">4,6 TrustScore</a>
+								</div>
+							</div>
+							
+							<!-- Rotating quotes -->
+							<div class="relative min-h-[500px] rounded-lg overflow-hidden bg-[url('/src/assets/images/tog.webp')] bg-cover bg-center">
+								<div class="absolute inset-0 flex items-center p-16 bg-black/20">
+									<div class="quotes-container w-full">
+										<div class="quote absolute inset-0 flex flex-col justify-center opacity-0 transition-opacity duration-500" data-active="true">
+											<div class="mx-auto w-full max-w-5xl px-8">
+												<h3 class="text-white mb-6 max-w-2xl leading-tight">"Jeg kan kun give mine varmeste anbefalinger til Højskolendk!"</h3>
+												<p class="text-xl text-white font-normal">- Catrine Lindskov</p>
+											</div>
+										</div>
+										<div class="quote absolute inset-0 flex flex-col justify-center opacity-0 transition-opacity duration-500">
+											<div class="mx-auto w-full max-w-5xl px-8">
+												<h3 class="text-white mb-6 max-w-2xl leading-tight">"Jeg havde en både hyggelig og spændende tur i godt selskab med fantastiske mennesker"</h3>
+												<p class="text-xl text-white font-normal">- Magnus Juliussen</p>
+											</div>
+										</div>
+										<div class="quote absolute inset-0 flex flex-col justify-center opacity-0 transition-opacity duration-500">
+											<div class="mx-auto w-full max-w-5xl px-8">
+												<h3 class="text-white mb-6 max-w-2xl leading-tight">"Jeg nød virkelig at rejsen var planlagt på forhånd"</h3>
+												<p class="text-xl text-white font-normal">- Maja Køhler Bay</p>
+											</div>
+										</div>
+										<div class="quote absolute inset-0 flex flex-col justify-center opacity-0 transition-opacity duration-500">
+											<div class="mx-auto w-full max-w-5xl px-8">
+												<h3 class="text-white mb-6 max-w-2xl leading-tight">"En uforglemmelig tur"</h3>
+												<p class="text-xl text-white font-normal">- Emilie Larsen</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			// Rotate quotes every 5 seconds
+			function rotateQuotes() {
+				const quotes = document.querySelectorAll('.quote');
+				let currentIndex = 0;
+
+				setInterval(() => {
+					quotes.forEach(quote => quote.style.opacity = '0');
+					currentIndex = (currentIndex + 1) % quotes.length;
+					quotes[currentIndex].style.opacity = '1';
+				}, 5000);
+
+				// Show first quote initially
+				quotes[0].style.opacity = '1';
+			}
+
+			// Run the rotation when the page loads
+			window.addEventListener('load', rotateQuotes);
+		</script>
+
 	</main>
 </MainLayout>

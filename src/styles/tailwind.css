@@ -24,6 +24,17 @@
   src: url("/fonts/helveticaneueblack-webfont.woff2") format("woff2"), url("/fonts/helveticaneueblack-webfont.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/futuracyrillicmedium-webfont.woff2") format("woff2"), url("/fonts/futuracyrillicmedium-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 @theme {
   /* Her tilføjes theme variable // tokens */
 
@@ -39,9 +50,39 @@
   --font-display: "Helvetica", monospace;
   --font-sans: "Quicksand", sans-serif;
   --font-serif: "Domine", serif;
+  --font-body: "futura-pt", sans-serif;
 }
 
 @layer base {
+  p {
+    font-family: var(--font-body);
+    font-size: 23px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 128px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+  }
 }
 
 @layer components {
