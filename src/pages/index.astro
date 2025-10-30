@@ -19,7 +19,7 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 <MainLayout title="HÖJSKOLEN">
-	<main class="relative">
+	<main class="relative overflow-x-hidden">
 		<!-- HERO -->
 		<section class="relative h-screen w-full bg-black">
 			<!-- background image fills 100vh and is cropped (object-cover) -->
@@ -39,7 +39,7 @@ import Button from "../components/Button.astro";
 		<section class="container mx-auto px-4 py-16 md:py-24">
 			<div class="flex flex-col md:grid md:grid-cols-12 gap-8">
 				<!-- Mobile: Image first, Desktop: Left side -->
-				<div class="md:col-span-5 relative order-1 md:order-1">
+				<div class="md:col-span-5 relative order-1 md:order-1 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 					<h2 class="mb-6 md:hidden">DIT LIVS EVENTYR</h2>
 					<div class="h-full flex">
 						<img 
@@ -49,7 +49,7 @@ import Button from "../components/Button.astro";
 						/>
 					</div>
 				</div>
-				<div class="md:col-span-7 order-2 md:order-2">
+				<div class="md:col-span-7 order-2 md:order-2 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<h2 class="hidden md:block mb-4 md:mb-6">DIT LIVS EVENTYR</h2>
 					<p class="mb-8">HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.</p>
 					<p class="mb-8">HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab, vil med på et fantastisk rejseeventyr, glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk, drømmer om en fed grupperejse med andre skønne unge, vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning. Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.</p>
@@ -63,13 +63,13 @@ import Button from "../components/Button.astro";
 
 		<!-- TAG PÅ HØJSKOLE I UDLANDET SECTION -->
 		<section class="container mx-auto px-4 py-16 md:py-24">
-			<div class="mb-12">
+			<div class="mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">
 				<h2 class="mb-4 md:mb-6">TAG PÅ HØJSKOLE I UDLANDET</h2>
 				<p class="mb-4">Når du rejser på højskole i udlandet med HÖJSKOLENDK...</p>
 			</div>
 
 			<div class="grid md:grid-cols-10 gap-8 items-start">
-				<div class="md:col-span-4">
+				<div class="md:col-span-4 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 					<p class="mb-8">Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet – hvad du virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge dine drømme.</p>
 					
 					<p class="mb-8">Gå på opdagelse her på siden efter dit livs eventyr – på højskole i udlandet med HÖJSKOLENDK.</p>
@@ -78,7 +78,7 @@ import Button from "../components/Button.astro";
 					
 				</div>
 
-				<div class="md:col-span-6 relative overflow-hidden">
+				<div class="md:col-span-6 relative overflow-hidden opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<div class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory">
 						<div class="flex-none w-[400px] snap-center relative group">
 							<img src={tog.src} alt="Højskole oplevelse 1" class="w-full h-[500px] object-cover rounded-lg">
@@ -133,7 +133,7 @@ import Button from "../components/Button.astro";
 				
 				<!-- Content overlay -->
 				<div class="absolute inset-0 flex flex-col items-center justify-center py-16 md:py-0">
-					<div class="container mx-auto px-4">
+					<div class="container mx-auto px-4 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<h2 class="text-black text-center mb-8 md:mb-16">HVOR EVENTYR MØDER FÆLLESSKAB</h2>
 						
 						<!-- Video container with 16:9 aspect ratio -->
@@ -154,17 +154,17 @@ import Button from "../components/Button.astro";
 		<!-- REJSE HØJSKOLE SECTION -->
 		<section class="container mx-auto px-4 py-16 md:py-24">
 			<div class="grid md:grid-cols-12 gap-8 items-center">
-				<div class="md:col-span-7">
+				<div class="md:col-span-7 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 					<h2 class="mb-8">REJSE HØJSKOLE</h2>
 					<div class="space-y-6">
-						<p class="hidden md:block">Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og aktivt forener det lærende med det legende.</p>
+						<p class="md:block">Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og aktivt forener det lærende med det legende.</p>
 						
-						<p class="hidden md:block">Vores elever beskriver HÖJSKOLENDK som "eventyrlige dannelsesrejser med noget på hjerte". Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere med på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.</p>
+						<p class="md:block">Vores elever beskriver HÖJSKOLENDK som "eventyrlige dannelsesrejser med noget på hjerte". Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere med på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.</p>
 						
-						<p class="hidden md:block">Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</p>
+						<p class="md:block">Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</p>
 					</div>
 				</div>
-				<div class="md:col-span-5">
+				<div class="md:col-span-5 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<img 
 						src={fly.src} 
 						alt="Orange illustration af fly" 
@@ -186,10 +186,10 @@ import Button from "../components/Button.astro";
 				
 				<div class="absolute inset-0 flex flex-col justify-center py-12 md:py-20">
 				<div class="container mx-auto px-4">
-					<h2 class="mb-8 md:mb-12 text-center">HVAD SIGER REJSENDE OM OS?</h2>
+					<h2 class="mb-8 md:mb-12 text-center opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">HVAD SIGER REJSENDE OM OS?</h2>
 					
 					<!-- Desktop: Logo and score side by side -->
-					<div class="hidden md:flex mb-12 items-center justify-center gap-12">
+					<div class="hidden md:flex mb-12 items-center justify-center gap-12 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 						<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" target="_blank" rel="noopener noreferrer">
 							<img src={trustpilot.src} alt="Trustpilot" class="h-48" />
 						</a>
@@ -488,7 +488,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 			</div>
 			
 			<!-- Mobile: Logo centered below reviews -->
-			<div class="md:hidden flex justify-center pb-12">
+			<div class="md:hidden flex justify-center pb-12 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-400">
 				<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" target="_blank" rel="noopener noreferrer">
 					<img src={trustpilot.src} alt="Trustpilot" class="h-24" />
 				</a>
@@ -516,7 +516,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</style>
 
 		<!-- HØJSKOLE I UDLANDET FOR UNGE MENNESKER SECTION -->
-		<section class="relative min-h-screen overflow-hidden">
+		<section class="relative min-h-screen">
 			<!-- Background image - luftballon -->
 			<div class="absolute inset-0 z-0">
 				<img 
@@ -590,12 +590,12 @@ Det er bestemt noget man skulle opleve(-:</p>
 			<div class="container mx-auto px-4">
 				<!-- Vertical heading on the left -->
 				<div class="flex gap-4 md:gap-8 items-end">
-					<div class="flex-shrink-0">
+					<div class="flex-shrink-0 opacity-0 -translate-y-full intersect:translate-y-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<h3 class="[writing-mode:vertical-lr] rotate-180 whitespace-nowrap">SE VORES REJSER</h3>
 					</div>
 					
 					<!-- Horizontal scrolling gallery -->
-					<div class="flex-1 overflow-hidden">
+					<div class="flex-1 overflow-hidden opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 						<div class="flex gap-4 md:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
 							<!-- Card 1 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
@@ -604,9 +604,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">MALDIVERNE</h4>
-											<h4 class="text-sm md:text-base">SRI LANKA</h4>
-											<h4 class="text-sm md:text-base">JAPAN</h4>
+											<h4>MALDIVERNE</h4>
+											<h4>SRI LANKA</h4>
+											<h4>JAPAN</h4>
 										</div>
 									</div>
 								</a>
@@ -620,9 +620,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">AUSTRALIEN</h4>
-											<h4 class="text-sm md:text-base">BALI</h4>
-											<h4 class="text-sm md:text-base">GILI ISLANDS</h4>
+											<h4>AUSTRALIEN</h4>
+											<h4>BALI</h4>
+											<h4>GILI ISLANDS</h4>
 										</div>
 									</div>
 								</a>
@@ -636,9 +636,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">JAPAN</h4>
-											<h4 class="text-sm md:text-base">TOKYO</h4>
-											<h4 class="text-sm md:text-base">KYOTO</h4>
+											<h4>JAPAN</h4>
+											<h4>TOKYO</h4>
+											<h4>KYOTO</h4>
 										</div>
 									</div>
 								</a>
@@ -652,9 +652,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">BALI</h4>
-											<h4 class="text-sm md:text-base">UBUD</h4>
-											<h4 class="text-sm md:text-base">SEMINYAK</h4>
+											<h4>BALI</h4>
+											<h4>UBUD</h4>
+											<h4>SEMINYAK</h4>
 										</div>
 									</div>
 								</a>
@@ -668,9 +668,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">NEW ZEALAND</h4>
-											<h4 class="text-sm md:text-base">AUCKLAND</h4>
-											<h4 class="text-sm md:text-base">QUEENSTOWN</h4>
+											<h4>NEW ZEALAND</h4>
+											<h4>AUCKLAND</h4>
+											<h4>QUEENSTOWN</h4>
 										</div>
 									</div>
 								</a>
@@ -684,9 +684,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">MEXICO</h4>
-											<h4 class="text-sm md:text-base">CANCUN</h4>
-											<h4 class="text-sm md:text-base">TULUM</h4>
+											<h4>MEXICO</h4>
+											<h4>CANCUN</h4>
+											<h4>TULUM</h4>
 										</div>
 									</div>
 								</a>
@@ -700,9 +700,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">THAILAND</h4>
-											<h4 class="text-sm md:text-base">BANGKOK</h4>
-											<h4 class="text-sm md:text-base">PHUKET</h4>
+											<h4>THAILAND</h4>
+											<h4>BANGKOK</h4>
+											<h4>PHUKET</h4>
 										</div>
 									</div>
 								</a>
@@ -716,9 +716,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
-											<h4 class="text-sm md:text-base">ECUADOR</h4>
-											<h4 class="text-sm md:text-base">QUITO</h4>
-											<h4 class="text-sm md:text-base">GALAPAGOS</h4>
+											<h4>ECUADOR</h4>
+											<h4>QUITO</h4>
+											<h4>GALAPAGOS</h4>
 										</div>
 									</div>
 								</a>
@@ -736,15 +736,15 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</section>
 
 		<!-- VI GØR EN FORSKEL -->
-		<section class="relative py-20 bg-baggrund overflow-hidden">
-			<!-- Background decorative line -->
-			<div class="absolute inset-0 w-full h-full pointer-events-none">
+		<section class="relative py-20 bg-baggrund">
+			<!-- Background decorative line - extends beyond section -->
+			<div class="absolute left-0 right-0 w-full pointer-events-none" style="top: -200px; height: calc(100% + 400px);">
 				<img src={slange.src} alt="" class="w-full h-full object-cover opacity-30" />
 			</div>
 
 			<div class="relative z-10 px-8 md:px-16 lg:px-24">
 				<!-- Header -->
-				<div class="text-center mb-12">
+				<div class="text-center mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">
 					<h2 class="font-bold mb-4">VI GØR EN FORSKEL</h2>
 					<p class="mx-auto">
 						Vi tror på at alle kan gøre en forskel - selv en højskole i Danmark.<br>
@@ -753,7 +753,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 				</div>
 
 				<!-- Image with stats -->
-				<div class="relative mx-auto mb-8">
+				<div class="relative mx-auto mb-8 opacity-0 scale-95 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<img src={traer.src} alt="Skov" class="w-full rounded-lg" />
 					
 					<!-- Stats overlay -->
@@ -778,7 +778,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 				</div>
 
 				<!-- Bottom section -->
-				<div class="mt-16 max-w-4xl">
+				<div class="mt-16 max-w-4xl opacity-0 translate-y-10 intersect:translate-y-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-400">
 					<h3 class="font-bold mb-8">UFORGLEMMELIGT<br>HØJSKOLEOPHOLD I UDLANDET</h3>
 					<div class="space-y-4">
 						<p>
@@ -801,11 +801,12 @@ Det er bestemt noget man skulle opleve(-:</p>
 		<!-- EN REJSE HØJSKOLE FYLDT MED OPLEVELSER -->
 		<section class="py-20 bg-baggrund">
 			<div class="container mx-auto px-8">
-				<h2 class="mb-12">EN REJSE HØJSKOLE FYLDT MED OPLEVELSER</h2>
+				<h2 class="mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">EN REJSE HØJSKOLE FYLDT MED OPLEVELSER</h2>
 				
-				<div class="grid md:grid-cols-2 gap-12">
+				<!-- Desktop: 2 columns with parallax -->
+				<div class="hidden md:grid md:grid-cols-2 gap-12">
 					<!-- Billeder venstre side - 4 billeder -->
-					<div id="parallax-container" class="space-y-8">
+					<div id="parallax-container" class="space-y-8 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<img src={tog.src} alt="Billede 1" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
 						<img src={tog.src} alt="Billede 2" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
 						<img src={tog.src} alt="Billede 3" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
@@ -813,44 +814,88 @@ Det er bestemt noget man skulle opleve(-:</p>
 					</div>
 
 					<!-- Tekst højre side - 5 tekster -->
-					<div class="space-y-8">
+					<div class="space-y-8 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#01</h1>
 							<h4 class="mb-4 uppercase">Teambuilding</h4>
-							<p class="hidden md:block">Hvorfor tage på et kedeligt kursus i Danmark, når du kan rejse ud i verden og udvikle dig samtidig! Du rejser sammen med andre unge voksne og lærer en hel masse om samarbejde, relationer, fællesskab, konflikter, styrker og stærke teams. Du får ikke blot rejse-erfaring på cv'et, men også et væld af brugbare redskaber til studie eller karriere.</p>
+							<p>Hvorfor tage på et kedeligt kursus i Danmark, når du kan rejse ud i verden og udvikle dig samtidig! Du rejser sammen med andre unge voksne og lærer en hel masse om samarbejde, relationer, fællesskab, konflikter, styrker og stærke teams. Du får ikke blot rejse-erfaring på cv'et, men også et væld af brugbare redskaber til studie eller karriere.</p>
 						</div>
 						
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#02</h1>
 							<h4 class="mb-4 uppercase">Kulturoplevelser</h4>
-							<p class="hidden md:block">Har du lyst til at dykke ned i nye kulturer, og være en del af projekter, hvor du kommer tættere på de lokale? På højskolerejen får du mulighed for at engagere dig i meningsfulde kulturprojekter og aktiviteter, der åbner døre til oplevelser, du ellers aldrig ville få. Vi får også ført kulturer og hverdagsliv, som kun opslår, når man deler tiden med mennesker, der bor der.</p>
+							<p>Har du lyst til at dykke ned i nye kulturer, og være en del af projekter, hvor du kommer tættere på de lokale? På højskolerejen får du mulighed for at engagere dig i meningsfulde kulturprojekter og aktiviteter, der åbner døre til oplevelser, du ellers aldrig ville få. Vi får også ført kulturer og hverdagsliv, som kun opslår, når man deler tiden med mennesker, der bor der.</p>
 						</div>
 						
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#03</h1>
 							<h4 class="mb-4 uppercase">Friuger - et væld af muligheder</h4>
-							<p class="hidden md:block">Efter spændende og lærerige undervisningsforløb, har vi sat af ter hviken højskole rejse du vælger – lægd en eller flere friuger ind. Her har i mulighed for selv at tage styringen og udforske det land, kontinent eller ejre du befinder os i. Friugerne bliver brugt på forskellige vis og oftest deler holdet sig op i lidt mindre grupper for at tage på et trip – måde gange rejser hele holdet sammen på en fed friuge.</p>
+							<p>Efter spændende og lærerige undervisningsforløb, har vi sat af ter hviken højskole rejse du vælger – lægd en eller flere friuger ind. Her har i mulighed for selv at tage styringen og udforske det land, kontinent eller ejre du befinder os i. Friugerne bliver brugt på forskellige vis og oftest deler holdet sig op i lidt mindre grupper for at tage på et trip – måde gange rejser hele holdet sammen på en fed friuge.</p>
 						</div>
 						
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#04</h1>
 							<h4 class="mb-4 uppercase">Spændende kulturoplevelser</h4>
-							<p class="hidden md:block">Kulturen er vigtig at opleve, når man befinder sig i et nyt land. Det giver indblik i nye måder at leve på, forskellige traditioner, normer, værdier og livsfilosofier. Tænk hvilket indblik, du ikke kan læse dig til i en bog eller se i et rejseprogram. På vores højskole ture kan du opleve alt fra ældgamle Hindutemplar i Indien, surfsulturen på Hawaii, Mayandianseme i Guatemala, de gamle inkaterier i Mexico, buddhisme i Thailand, leplantsger i Sri Lanka og kakaofarme i Costa Rica</p>
+							<p>Kulturen er vigtig at opleve, når man befinder sig i et nyt land. Det giver indblik i nye måder at leve på, forskellige traditioner, normer, værdier og livsfilosofier. Tænk hvilket indblik, du ikke kan læse dig til i en bog eller se i et rejseprogram. På vores højskole ture kan du opleve alt fra ældgamle Hindutemplar i Indien, surfsulturen på Hawaii, Mayandianseme i Guatemala, de gamle inkaterier i Mexico, buddhisme i Thailand, leplantsger i Sri Lanka og kakaofarme i Costa Rica</p>
 						</div>
 						
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#05</h1>
 							<h4 class="mb-4 uppercase">Vilde naturoplevelser</h4>
-							<p class="hidden md:block">Hvis nogen tir et vardan oplevelse er det på højskole i udlandet med vores grupper. Prøv nogle vilde naturoplevelser. Mange af de destinationer, hvor vi tager hen, byder på atemberrånde natur og fantastiske og eventydlig haver. Det kan være alt fra snorklering i Caribien, river rafting i Thailand, gamle træktopper efter Incatrails i Peru, fjelde og trekking i Himalayan bjerge i Nepal, sejle kajak i marine nationalparker, dykke med manta rays på Hawaii, vandre i New Zealands fantastiske nationalparker eller bestign vulkaner i Ecuador. At komme tæt på Jordens bjerne. Alle vores rejser er fyldt mad storslåede naturoplevelser.</p>
+							<p>Hvis nogen tir et vardan oplevelse er det på højskole i udlandet med vores grupper. Prøv nogle vilde naturoplevelser. Mange af de destinationer, hvor vi tager hen, byder på atemberrånde natur og fantastiske og eventydlig haver. Det kan være alt fra snorklering i Caribien, river rafting i Thailand, gamle træktopper efter Incatrails i Peru, fjelde og trekking i Himalayan bjerge i Nepal, sejle kajak i marine nationalparker, dykke med manta rays på Hawaii, vandre i New Zealands fantastiske nationalparker eller bestign vulkaner i Ecuador. At komme tæt på Jordens bjerne. Alle vores rejser er fyldt mad storslåede naturoplevelser.</p>
 						</div>
+					</div>
+				</div>
+
+				<!-- Mobile: Single column alternating -->
+				<div class="md:hidden space-y-6">
+					<!-- #01 - Text first -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#01</h1>
+						<h4 class="mb-4 uppercase">Teambuilding</h4>
+						<p>Hvorfor tage på et kedeligt kursus i Danmark, når du kan rejse ud i verden og udvikle dig samtidig! Du rejser sammen med andre unge voksne og lærer en hel masse om samarbejde, relationer, fællesskab, konflikter, styrker og stærke teams. Du får ikke blot rejse-erfaring på cv'et, men også et væld af brugbare redskaber til studie eller karriere.</p>
+					</div>
+					<img src={tog.src} alt="Teambuilding" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #02 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#02</h1>
+						<h4 class="mb-4 uppercase">Kulturoplevelser</h4>
+						<p>Har du lyst til at dykke ned i nye kulturer, og være en del af projekter, hvor du kommer tættere på de lokale? På højskolerejen får du mulighed for at engagere dig i meningsfulde kulturprojekter og aktiviteter, der åbner døre til oplevelser, du ellers aldrig ville få. Vi får også ført kulturer og hverdagsliv, som kun opslår, når man deler tiden med mennesker, der bor der.</p>
+					</div>
+					<img src={tog.src} alt="Kulturoplevelser" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #03 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#03</h1>
+						<h4 class="mb-4 uppercase">Friuger - et væld af muligheder</h4>
+						<p>Efter spændende og lærerige undervisningsforløb, har vi sat af ter hviken højskole rejse du vælger – lægd en eller flere friuger ind. Her har i mulighed for selv at tage styringen og udforske det land, kontinent eller ejre du befinder os i. Friugerne bliver brugt på forskellige vis og oftest deler holdet sig op i lidt mindre grupper for at tage på et trip – måde gange rejser hele holdet sammen på en fed friuge.</p>
+					</div>
+					<img src={tog.src} alt="Friuger" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #04 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#04</h1>
+						<h4 class="mb-4 uppercase">Spændende kulturoplevelser</h4>
+						<p>Kulturen er vigtig at opleve, når man befinder sig i et nyt land. Det giver indblik i nye måder at leve på, forskellige traditioner, normer, værdier og livsfilosofier. Tænk hvilket indblik, du ikke kan læse dig til i en bog eller se i et rejseprogram. På vores højskole ture kan du opleve alt fra ældgamle Hindutemplar i Indien, surfsulturen på Hawaii, Mayandianseme i Guatemala, de gamle inkaterier i Mexico, buddhisme i Thailand, leplantsger i Sri Lanka og kakaofarme i Costa Rica</p>
+					</div>
+					<img src={tog.src} alt="Spændende kulturoplevelser" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #05 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#05</h1>
+						<h4 class="mb-4 uppercase">Vilde naturoplevelser</h4>
+						<p>Hvis nogen tir et vardan oplevelse er det på højskole i udlandet med vores grupper. Prøv nogle vilde naturoplevelser. Mange af de destinationer, hvor vi tager hen, byder på atemberrånde natur og fantastiske og eventydlig haver. Det kan være alt fra snorklering i Caribien, river rafting i Thailand, gamle træktopper efter Incatrails i Peru, fjelde og trekking i Himalayan bjerge i Nepal, sejle kajak i marine nationalparker, dykke med manta rays på Hawaii, vandre i New Zealands fantastiske nationalparker eller bestign vulkaner i Ecuador. At komme tæt på Jordens bjerne. Alle vores rejser er fyldt mad storslåede naturoplevelser.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<script is:inline>
-			// Simpel parallax scrolling - kun når sektionen er synlig
+			// Simpel parallax scrolling - kun på desktop
 			(function() {
+				if (window.innerWidth < 768) return; // Skip on mobile
+
 				const container = document.getElementById('parallax-container');
 				if (!container) {
 					console.log('Parallax container ikke fundet');
@@ -899,7 +944,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</script>
 
 		<!-- BUND SECTION -->
-		<section class="w-full">
+		<section class="w-full opacity-0 intersect:opacity-100 transition-opacity duration-1000 ease-out intersect-once">
 			<img src={bund.src} alt="" class="w-full h-auto" />
 		</section>
 
