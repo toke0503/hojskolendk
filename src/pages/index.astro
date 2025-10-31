@@ -14,17 +14,12 @@ import sky4 from "../assets/images/sky4.webp";
 import traer from "../assets/images/traer.webp";
 import slange from "../assets/images/slange.png";
 import bund from "../assets/images/bund.png";
-import tommerflode from "../assets/images/tommerflode.jpg";
-import snorkel from "../assets/images/snorkel.jpg";
-import telt from "../assets/images/telt.jpg";
-import pabjergImg from "../assets/images/pabjerg.jpg";
-import pascooter from "../assets/images/scooter.jpg";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 <MainLayout title="HÖJSKOLEN">
-	<main class="relative">
+	<main class="relative overflow-x-hidden">
 		<!-- HERO -->
 		<section class="relative h-screen w-full bg-black">
 			<!-- background image fills 100vh and is cropped (object-cover) -->
@@ -42,8 +37,10 @@ import Button from "../components/Button.astro";
 
 		<!-- DIT LIVS EVENTYR SECTION -->
 		<section class="container mx-auto px-4 py-16 md:py-24">
-			<div class="grid md:grid-cols-12 gap-8">
-				<div class="md:col-span-5 relative">
+			<div class="flex flex-col md:grid md:grid-cols-12 gap-8">
+				<!-- Mobile: Image first, Desktop: Left side -->
+				<div class="md:col-span-5 relative order-1 md:order-1 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+					<h2 class="mb-6 md:hidden">DIT LIVS EVENTYR</h2>
 					<div class="h-full flex">
 						<img 
 							src={tog.src} 
@@ -52,52 +49,71 @@ import Button from "../components/Button.astro";
 						/>
 					</div>
 				</div>
-				<div class="md:col-span-7">
-					<h2>DIT LIVS EVENTYR</h2>
-					<p class="mb-12">HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.
-<br><br>
-HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab, vil med på et fantastisk rejseeventyr, glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk, drømmer om en fed grupperejse med andre skønne unge, vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning. Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.
-<br><br>
-Vi glæder os til at lære dig at kende!
-</p>
-					<Button variant="primary" size="large">VÆLG DIT EVENTYR</Button>
+				<div class="md:col-span-7 order-2 md:order-2 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
+					<h2 class="hidden md:block mb-4 md:mb-6">DIT LIVS EVENTYR</h2>
+					<p class="mb-8">HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.</p>
+					<p class="mb-8">HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab, vil med på et fantastisk rejseeventyr, glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk, drømmer om en fed grupperejse med andre skønne unge, vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning. Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.</p>
+					<p class="mb-8">Vi glæder os til at lære dig at kende!</p>
+					<div class="flex justify-center md:justify-start">
+						<Button variant="primary" size="large">VÆLG DIT EVENTYR</Button>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- TAG PÅ HØJSKOLE I UDLANDET SECTION -->
 		<section class="container mx-auto px-4 py-16 md:py-24">
-			<div class="mb-12">
-				<h2 class="mb-6">TAG PÅ HØJSKOLE I UDLANDET</h2>
+			<div class="mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">
+				<h2 class="mb-4 md:mb-6">TAG PÅ HØJSKOLE I UDLANDET</h2>
 				<p class="mb-4">Når du rejser på højskole i udlandet med HÖJSKOLENDK...</p>
 			</div>
 
 			<div class="grid md:grid-cols-10 gap-8 items-start">
-				<div class="md:col-span-4">
+				<div class="md:col-span-4 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 					<p class="mb-8">Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet – hvad du virkeligt brænder for og kan mærke er meningsfuldt – så du kan forfølge dine drømme.</p>
 					
 					<p class="mb-8">Gå på opdagelse her på siden efter dit livs eventyr – på højskole i udlandet med HÖJSKOLENDK.</p>
 					
-					<p>Velkommen!</p>
+					<p class="hidden md:block">Velkommen!</p>
 					
 				</div>
 
-				<div class="md:col-span-6 relative overflow-hidden">
+				<div class="md:col-span-6 relative overflow-hidden opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<div class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory">
-						<div class="flex-none w-[400px] snap-center">
-							<img src={tommerflode.src} alt="Tommerflode - højskole oplevelse" class="w-full h-[500px] object-cover rounded-lg">
+						<div class="flex-none w-[400px] snap-center relative group">
+							<img src={tog.src} alt="Højskole oplevelse 1" class="w-full h-[500px] object-cover rounded-lg">
+							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
+								<p class="text-black text-6xl font-bold mb-4">01</p>
+								<p class="text-black text-xl">Du bliver en del af et fantastisk fællesskab med et stærkt sammenhold</p>
+							</div>
 						</div>
-						<div class="flex-none w-[400px] snap-center">
-							<img src={snorkel.src} alt="Snorkel - højskole oplevelse" class="w-full h-[500px] object-cover rounded-lg">
+						<div class="flex-none w-[400px] snap-center relative group">
+							<img src={tog.src} alt="Højskole oplevelse 2" class="w-full h-[500px] object-cover rounded-lg">
+							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
+								<p class="text-black text-6xl font-bold mb-4">02</p>
+								<p class="text-black text-xl">Du får masser af vilde naturoplevelser, adventure og spændende kulturmøder</p>
+							</div>
 						</div>
-						<div class="flex-none w-[400px] snap-center">
-							<img src={telt.src} alt="Telt - højskole oplevelse" class="w-full h-[500px] object-cover rounded-lg">
+						<div class="flex-none w-[400px] snap-center relative group">
+							<img src={tog.src} alt="Højskole oplevelse 3" class="w-full h-[500px] object-cover rounded-lg">
+							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
+								<p class="text-black text-6xl font-bold mb-4">03</p>
+								<p class="text-black text-xl">Du opdager nye og stærke sider af dig selv, flytter grænser og får mere selvtillid</p>
+							</div>
 						</div>
-						<div class="flex-none w-[400px] snap-center">
-							<img src={pabjergImg.src} alt="Pabjerg - højskole oplevelse" class="w-full h-[500px] object-cover rounded-lg">
+						<div class="flex-none w-[400px] snap-center relative group">
+							<img src={tog.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
+							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
+								<p class="text-black text-6xl font-bold mb-4">04</p>
+								<p class="text-black text-xl">Du rejser altid med danske passionerede rejseledere og engagerede undervisere</p>
+							</div>
 						</div>
-						<div class="flex-none w-[400px] snap-center">
-							<img src={pascooter.src} alt="Pascooter - højskole oplevelse" class="w-full h-[500px] object-cover rounded-lg">
+						<div class="flex-none w-[400px] snap-center relative group">
+							<img src={tog.src} alt="Højskole oplevelse 5" class="w-full h-[500px] object-cover rounded-lg">
+							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
+								<p class="text-black text-6xl font-bold mb-4">05</p>
+								<p class="text-black text-xl">Du får et uforglemmeligit, unikt og trygt rejseeventyr for livet</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -105,23 +121,23 @@ Vi glæder os til at lære dig at kende!
 		</section>
 
 		<!-- HVOR EVENTYR MØDER FÆLLESSKAB SECTION -->
-		<section class="relative">
-			<div class="relative">
+		<section class="relative overflow-hidden">
+			<div class="relative min-h-[80vh] md:min-h-0">
 				<!-- Background image with waves -->
 				<img 
 					src={orangeBolger.src} 
 					alt="" 
-					class="w-full h-auto"
+					class="absolute inset-0 w-full h-full object-cover md:relative md:object-contain"
 					aria-hidden="true"
 				/>
 				
 				<!-- Content overlay -->
-				<div class="absolute inset-0 flex flex-col items-center justify-center">
-					<div class="container mx-auto px-4">
-						<h2 class="text-black text-center mb-16">HVOR EVENTYR MØDER FÆLLESSKAB</h2>
+				<div class="absolute inset-0 flex flex-col items-center justify-center py-16 md:py-0">
+					<div class="container mx-auto px-4 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h2 class="text-black text-center mb-8 md:mb-16">HVOR EVENTYR MØDER FÆLLESSKAB</h2>
 						
 						<!-- Video container with 16:9 aspect ratio -->
-						<!-- <div class="max-w-6xl mx-auto relative aspect-video rounded-lg overflow-hidden">
+						<div class="max-w-6xl mx-auto relative aspect-video rounded-lg overflow-hidden">
 							<video 
 								class="absolute inset-0 w-full h-full object-cover"
 								controls
@@ -129,7 +145,7 @@ Vi glæder os til at lære dig at kende!
 								<source src="/placeholder.mp4" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -138,17 +154,17 @@ Vi glæder os til at lære dig at kende!
 		<!-- REJSE HØJSKOLE SECTION -->
 		<section class="container mx-auto px-4 py-16 md:py-24">
 			<div class="grid md:grid-cols-12 gap-8 items-center">
-				<div class="md:col-span-7">
+				<div class="md:col-span-7 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 					<h2 class="mb-8">REJSE HØJSKOLE</h2>
 					<div class="space-y-6">
-						<p>Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og aktivt forener det lærende med det legende.</p>
+						<p class="md:block">Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og aktivt forener det lærende med det legende.</p>
 						
-						<p>Vores elever beskriver HÖJSKOLENDK som "eventyrlige dannelsesrejser med noget på hjerte". Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere med på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.</p>
+						<p class="md:block">Vores elever beskriver HÖJSKOLENDK som "eventyrlige dannelsesrejser med noget på hjerte". Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere med på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.</p>
 						
-						<p>Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</p>
+						<p class="md:block">Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</p>
 					</div>
 				</div>
-				<div class="md:col-span-5">
+				<div class="md:col-span-5 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<img 
 						src={fly.src} 
 						alt="Orange illustration af fly" 
@@ -160,37 +176,39 @@ Vi glæder os til at lære dig at kende!
 
 		<!-- TRUSTPILOT SECTION -->
 		<section class="relative overflow-hidden">
-			<img 
-				src={orangeBolger2.src} 
-				alt="" 
-				class="w-full h-auto"
-				aria-hidden="true"
-			/>
-			
-			<div class="absolute inset-0 flex flex-col justify-center py-20">
-			<div class="container mx-auto px-4">
-				<h2 class="mb-12 text-center">HVAD SIGER REJSENDE OM OS?</h2>
+			<div class="relative min-h-screen md:min-h-0">
+				<img 
+					src={orangeBolger2.src} 
+					alt="" 
+					class="absolute inset-0 w-full h-full object-cover md:relative md:w-full md:h-auto md:object-contain"
+					aria-hidden="true"
+				/>
 				
-				<div class="mb-12 flex items-center justify-center gap-4">
-					<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" target="_blank" rel="noopener noreferrer">
-						<img src={trustpilot.src} alt="Trustpilot" class="h-32" />
-					</a>
-				
-					<span class="text-2xl font-bold">4,6 TrustScore</span>
+				<div class="absolute inset-0 flex flex-col justify-center py-12 md:py-20">
+				<div class="container mx-auto px-4">
+					<h2 class="mb-8 md:mb-12 text-center opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">HVAD SIGER REJSENDE OM OS?</h2>
+					
+					<!-- Desktop: Logo and score side by side -->
+					<div class="hidden md:flex mb-12 items-center justify-center gap-12 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
+						<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" target="_blank" rel="noopener noreferrer">
+							<img src={trustpilot.src} alt="Trustpilot" class="h-48" />
+						</a>
+					
+						<p class="text-2xl font-bold">4,6 TrustScore</p>
+					</div>
 				</div>
-			</div>
 
 			<!-- Infinite scrolling carousel -->
-			<div class="relative">
+			<div class="relative mb-8 md:mb-0">
 				<div class="carousel-track flex gap-8">
 					<!-- Review 1 - Therese Ross -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg var afsted en måned til Bali med Højskolendk, og selvom vejret drillede de første par uger, håndterede de det super professionelt. Planerne blev hurtigt ændret, så vi alligevel fik masser spændende oplevelser. Da vejret vendte, fik vi de smukkeste dage med sol og udflugter. Alt var velorganiseret, og servicen var i top jeg kan varmt anbefale Højskolendk!</p>
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg var afsted en måned til Bali med Højskolendk, og selvom vejret drillede de første par uger, håndterede de det super professionelt. Planerne blev hurtigt ændret, så vi alligevel fik masser spændende oplevelser. Da vejret vendte, fik vi de smukkeste dage med sol og udflugter. Alt var velorganiseret, og servicen var i top jeg kan varmt anbefale Højskolendk!</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -215,13 +233,13 @@ Vi glæder os til at lære dig at kende!
 					</div>
 
 					<!-- Review 2 - Bjørk Rimmen Noe -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg er så glad for, at jeg valgte at rejse med Højskolendk til Indien, Nepal, Thailand, Vietnam og Sri Lanka. Opholdet har givet mig venner og oplevelser for livet, der på mange måder skyldes rammerne på turen. Med spændende planlagte programmer og helt ekstremt dygtige rejseledere, kunne man fuldt ud tage indtrykkene til sig, nyde turen i trygge hænder og skabe tætte relationer.</p>
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg er så glad for, at jeg valgte at rejse med Højskolendk til Indien, Nepal, Thailand, Vietnam og Sri Lanka. Opholdet har givet mig venner og oplevelser for livet, der på mange måder skyldes rammerne på turen. Med spændende planlagte programmer og helt ekstremt dygtige rejseledere, kunne man fuldt ud tage indtrykkene til sig, nyde turen i trygge hænder og skabe tætte relationer.</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -246,13 +264,13 @@ Vi glæder os til at lære dig at kende!
 					</div>
 
 					<!-- Review 3 - Malte Pedersen -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg anbefaler højskolendk fordi man både det mulighed for at bestemme en masse selv hvad man har lyst til at opleve og at der også altid er planlagt noget for dig.
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg anbefaler højskolendk fordi man både det mulighed for at bestemme en masse selv hvad man har lyst til at opleve og at der også altid er planlagt noget for dig.
 
 Det er bestemt noget man skulle opleve(-:</p>
 						<div class="mt-auto">
@@ -279,13 +297,13 @@ Det er bestemt noget man skulle opleve(-:</p>
 					</div>
 
 					<!-- Review 4 - Annika Folck (duplicate for seamless loop) -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg var afsted for første gang uden forældre eller bekendte, hvilket virkelig kan anbefales da fællesskabet og alt hvad det indebar er noget af det bedste jeg har oplevet.
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg var afsted for første gang uden forældre eller bekendte, hvilket virkelig kan anbefales da fællesskabet og alt hvad det indebar er noget af det bedste jeg har oplevet.
 
 Alt i alt kan det stærkt anbefales til andre førstegangssejlere alene rejsende, da man har muligheden for at holde sig tæt med, men også de rejseleder man har med. Så kæmpe anbefaling her fra.</p>
 						<div class="mt-auto">
@@ -312,15 +330,15 @@ Alt i alt kan det stærkt anbefales til andre førstegangssejlere alene rejsende
 					</div>
 
 					<!-- Review 5 - Josefine Brønlund -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Der var virkelig styr på tingene hele vejen igennem, og vores rejseledere var så søde, nærværende og engagerede.
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Der var virkelig styr på tingene hele vejen igennem, og vores rejseledere var så søde, nærværende og engagerede.
 
-Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det stærke fællesskab vi også fik opbygget. Alle engagerede sig i fællesskabet og det føltes som en lille familie<3</p>
+Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det stærke fællesskab vi også fik opbygget. Alle engagerede sig i fællesskabet og det føltes som en lille familie ❤️</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -345,13 +363,13 @@ Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det st�
 					</div>
 
 					<!-- Review 6 - Oliver Andersen -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg havde en rigtig god tur med højskolendk, hvor jeg oplevede at helt unikt fællesskab. Personligt var der perfekt balance mellem undervisning, planlagte rejse og Friuger hvor man selv kunne planlægge oplevelser. Vi havde nogle feje fast med de rejserende af os, hvilket var rigtig fedt tok for en oplevelse for os.</p>
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg havde en rigtig god tur med højskolendk, hvor jeg oplevede at helt unikt fællesskab. Personligt var der perfekt balance mellem undervisning, planlagte rejse og Friuger hvor man selv kunne planlægge oplevelser. Vi havde nogle feje fast med de rejserende af os, hvilket var rigtig fedt tok for en oplevelse for os.</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -376,13 +394,13 @@ Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det st�
 					</div>
 
 					<!-- Duplicates for seamless loop -->
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg var afsted en måned til Bali med Højskolendk, og selvom vejret drillede de første par uger, håndterede de det super professionelt. Planerne blev hurtigt ændret, så vi alligevel fik masser spændende oplevelser. Da vejret vendte, fik vi de smukkeste dage med sol og udflugter. Alt var velorganiseret, og servicen var i top jeg kan varmt anbefale Højskolendk!</p>
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg var afsted en måned til Bali med Højskolendk, og selvom vejret drillede de første par uger, håndterede de det super professionelt. Planerne blev hurtigt ændret, så vi alligevel fik masser spændende oplevelser. Da vejret vendte, fik vi de smukkeste dage med sol og udflugter. Alt var velorganiseret, og servicen var i top jeg kan varmt anbefale Højskolendk!</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -406,13 +424,13 @@ Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det st�
 						</div>
 					</div>
 
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg er så glad for, at jeg valgte at rejse med Højskolendk til Indien, Nepal, Thailand, Vietnam og Sri Lanka. Opholdet har givet mig venner og oplevelser for livet, der på mange måder skyldes rammerne på turen. Med spændende planlagte programmer og helt ekstremt dygtige rejseledere, kunne man fuldt ud tage indtrykkene til sig, nyde turen i trygge hænder og skabe tætte relationer.</p>
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg er så glad for, at jeg valgte at rejse med Højskolendk til Indien, Nepal, Thailand, Vietnam og Sri Lanka. Opholdet har givet mig venner og oplevelser for livet, der på mange måder skyldes rammerne på turen. Med spændende planlagte programmer og helt ekstremt dygtige rejseledere, kunne man fuldt ud tage indtrykkene til sig, nyde turen i trygge hænder og skabe tætte relationer.</p>
 						<div class="mt-auto">
 							<div class="flex gap-1 mb-4">
 								<svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ff6d2e">
@@ -436,13 +454,13 @@ Vi oplevede en masse vilde og spændende ting. Og det hele blev bedre af det st�
 						</div>
 					</div>
 
-					<div class="carousel-item flex-shrink-0 w-[500px] bg-white p-8 rounded-lg flex flex-col">
-						<div class="mb-6">
-							<svg class="w-20 h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
+					<div class="carousel-item flex-shrink-0 w-[350px] md:w-[500px] bg-white p-6 md:p-8 rounded-lg flex flex-col">
+						<div class="mb-4 md:mb-6">
+							<svg class="w-16 h-16 md:w-20 md:h-20 text-orange" viewBox="0 0 24 24" fill="currentColor">
 								<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
 							</svg>
 						</div>
-						<p class="mb-6 text-lg leading-relaxed flex-grow">Jeg anbefaler højskolendk fordi man både det mulighed for at bestemme en masse selv hvad man har lyst til at opleve og at der også altid er planlagt noget for dig.
+						<p class="mb-4 md:mb-6 text-base md:text-lg leading-snug md:leading-relaxed flex-grow">Jeg anbefaler højskolendk fordi man både det mulighed for at bestemme en masse selv hvad man har lyst til at opleve og at der også altid er planlagt noget for dig.
 
 Det er bestemt noget man skulle opleve(-:</p>
 						<div class="mt-auto">
@@ -468,6 +486,13 @@ Det er bestemt noget man skulle opleve(-:</p>
 						</div>
 				</div>
 			</div>
+			
+			<!-- Mobile: Logo centered below reviews -->
+			<div class="md:hidden flex justify-center pb-12 opacity-0 scale-90 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-400">
+				<a href="https://www.trustpilot.com/review/www.hojskolendk.dk?stars=2&stars=5&utm_medium=trustbox&utm_source=Mini" target="_blank" rel="noopener noreferrer">
+					<img src={trustpilot.src} alt="Trustpilot" class="h-24" />
+				</a>
+			</div>
 			</div>
 		</section>
 
@@ -491,7 +516,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</style>
 
 		<!-- HØJSKOLE I UDLANDET FOR UNGE MENNESKER SECTION -->
-		<section class="relative min-h-screen overflow-hidden">
+		<section class="relative min-h-screen">
 			<!-- Background image - luftballon -->
 			<div class="absolute inset-0 z-0">
 				<img 
@@ -503,19 +528,19 @@ Det er bestemt noget man skulle opleve(-:</p>
 			</div>
 
 			<!-- Content overlay -->
-			<div class="relative z-10 container mx-auto px-4 py-12">
+			<div class="relative z-10 container mx-auto px-4 py-12 md:py-12">
 				<!-- Main heading -->
-				<h2 class="mb-12 opacity-0 intersect:animate-fade-down intersect-once">HØJSKOLE I UDLANDET FOR UNGE MENNESKER</h2>
+				<h2 class="mb-8 md:mb-12 opacity-0 intersect:animate-fade-down intersect-once">HØJSKOLE I UDLANDET FOR UNGE MENNESKER</h2>
 				
 				<!-- Cloud sections with text overlays -->
-				<div class="space-y-4 md:space-y-6">
+				<div class="space-y-6 md:space-y-6">
 					<!-- Sky 1 - Venstre -->
 					<div class="relative max-w-5xl -translate-x-full opacity-0 intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<img src={sky1.src} alt="" class="w-full h-auto opacity-90" aria-hidden="true" />
-						<div class="absolute inset-0 flex items-center justify-center mt-10 px-20 md:px-32 lg:px-40 py-16">
-							<div class="max-w-2xl">
-								<p>
-									Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring. Et højskoleophold i udlandet er noget, du bare skal prøve mindst en gang i dit liv – du vil aldrig fortryde, at du tog afsted. Og du kan glæde dig til nye venskaber og oplevelser for livet.
+						<div class="absolute inset-0 flex items-center justify-center px-8 md:px-32 lg:px-40 py-8 md:py-16">
+							<div class="max-w-2xl mt-6 md:mt-0">
+								<p class="leading-tight md:leading-normal">
+									Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring.
 								</p>
 							</div>
 						</div>
@@ -524,10 +549,10 @@ Det er bestemt noget man skulle opleve(-:</p>
 					<!-- Sky 2 - Højre -->
 					<div class="relative max-w-5xl ml-auto translate-x-full opacity-0 intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 						<img src={sky2.src} alt="" class="w-full h-auto opacity-90" aria-hidden="true" />
-						<div class="absolute inset-0 flex mt-20 items-center justify-center px-20 md:px-32 lg:px-40 py-16">
-							<div class="max-w-3xl">
-								<p>
-									Med HÖJSKOLENDK kan du komme på rejsende højskole i stort set alle hjørner af verden. Drømmer du om smukke og vilde naturoplevelser på Bali, Hawaii, Maldiverne eller i Australien? Storbyseventyr i New York, Sydney, Tokyo, Bangkok eller Rio de Janeiro? Kulturelle oplevelser og autentiske menneskemøder i Indien, Bolivia, Alaska, Japan eller Mexico? Føde og adventure aktiviteter med masser af adrenalin i New Zealand, Nepal, Ecuador eller Costa Rica? Vælg mellem et af vores fantastiske højskoleophold i udlandet og lad verden gøre dig endnu mere nysgerrig.
+						<div class="absolute inset-0 flex items-center justify-center px-8 md:px-32 lg:px-40 py-8 md:py-16">
+							<div class="max-w-3xl mt-6 md:mt-0">
+								<p class="leading-tight md:leading-normal">
+									Med HÖJSKOLENDK kan du komme på rejsende højskole i stort set alle hjørner af verden. Drømmer du om smukke og vilde naturoplevelser på Bali, Hawaii, Maldiverne eller i Australien? Storbyseventyr i New York, Sydney, Tokyo, Bangkok eller Rio de Janeiro?
 								</p>
 							</div>
 						</div>
@@ -536,10 +561,10 @@ Det er bestemt noget man skulle opleve(-:</p>
 					<!-- Sky 3 - Venstre -->
 					<div class="relative max-w-5xl -translate-x-full opacity-0 intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-400">
 						<img src={sky3.src} alt="" class="w-full h-auto opacity-90" aria-hidden="true" />
-						<div class="absolute inset-0 flex items-center justify-center px-20 md:px-32 lg:px-40 py-16">
-							<div class="max-w-2xl mt-10">
-								<p>
-									Du rejser altid med andre unge mennesker på din egen alder og danske rejseledere og undervisere. På højskolerejen kommer du ikke kun til at opleve og forstå andre spændende kulturer. Rejserne giver også et unikt indblik i dig selv, så du kommer hjem med mere selvindsigt og selvværd og står endnu stærkere som menneske.
+						<div class="absolute inset-0 flex items-center justify-center px-8 md:px-32 lg:px-40 py-8 md:py-16">
+							<div class="max-w-2xl mt-6 md:mt-0">
+								<p class="leading-tight md:leading-normal">
+									Du rejser altid med andre unge mennesker på din egen alder og danske rejseledere og undervisere. På højskolerejen kommer du ikke kun til at opleve og forstå andre spændende kulturer.
 								</p>
 							</div>
 						</div>
@@ -548,9 +573,9 @@ Det er bestemt noget man skulle opleve(-:</p>
 					<!-- Sky 4 - Højre -->
 					<div class="relative max-w-5xl ml-auto translate-x-full opacity-0 intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-600">
 						<img src={sky4.src} alt="" class="w-full h-auto opacity-90" aria-hidden="true" />
-						<div class="absolute inset-0 flex items-center justify-center px-20 md:px-32 lg:px-40 py-16">
-							<div class="max-w-2xl mt-10">
-								<p>
+						<div class="absolute inset-0 flex items-center justify-center px-8 md:px-32 lg:px-40 py-8 md:py-16">
+							<div class="max-w-2xl mt-6 md:mt-0">
+								<p class="leading-tight md:leading-normal">
 									At rejse med en højskole er ikke blot et eventyr ud i verden – det er også en spændende rejse i forhold til dig og din personlige udvikling.
 								</p>
 							</div>
@@ -564,140 +589,140 @@ Det er bestemt noget man skulle opleve(-:</p>
 		<section class="py-16 md:py-24">
 			<div class="container mx-auto px-4">
 				<!-- Vertical heading on the left -->
-				<div class="flex gap-8 items-end">
-					<div class="flex-shrink-0">
+				<div class="flex gap-4 md:gap-8 items-end">
+					<div class="flex-shrink-0 opacity-0 -translate-y-full intersect:translate-y-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<h3 class="[writing-mode:vertical-lr] rotate-180 whitespace-nowrap">SE VORES REJSER</h3>
 					</div>
 					
 					<!-- Horizontal scrolling gallery -->
-					<div class="flex-1 overflow-hidden">
-						<div class="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
+					<div class="flex-1 overflow-hidden opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
+						<div class="flex gap-4 md:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
 							<!-- Card 1 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Dykkercertifikat på Nusa Penida" class="w-full h-full object-cover">
-									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<!-- Overlay - always visible on mobile, hover on desktop -->
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>MALDIVERNE</h4>
 											<h4>SRI LANKA</h4>
 											<h4>JAPAN</h4>
 										</div>
 									</div>
 								</a>
-								<p>Dykkercertifikat på Nusa Penida</p>
+								<p class="hidden md:block">Dykkercertifikat på Nusa Penida</p>
 							</div>
 							
 							<!-- Card 2 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Poon Hill - Nepal" class="w-full h-full object-cover">
-									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<!-- Overlay - always visible on mobile, hover on desktop -->
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>AUSTRALIEN</h4>
 											<h4>BALI</h4>
 											<h4>GILI ISLANDS</h4>
 										</div>
 									</div>
 								</a>
-								<p>Poon Hill - Nepal</p>
+								<p class="hidden md:block">Poon Hill - Nepal</p>
 							</div>
 							
 							<!-- Card 3 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Japan" class="w-full h-full object-cover">
-									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<!-- Overlay - always visible on mobile, hover on desktop -->
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>JAPAN</h4>
 											<h4>TOKYO</h4>
 											<h4>KYOTO</h4>
 										</div>
 									</div>
 								</a>
-								<p>Japan</p>
+								<p class="hidden md:block">Japan</p>
 							</div>
 							
 							<!-- Card 4 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Bali" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>BALI</h4>
 											<h4>UBUD</h4>
 											<h4>SEMINYAK</h4>
 										</div>
 									</div>
 								</a>
-								<p>Bali</p>
+								<p class="hidden md:block">Bali</p>
 							</div>
 							
 							<!-- Card 5 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="New Zealand" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>NEW ZEALAND</h4>
 											<h4>AUCKLAND</h4>
 											<h4>QUEENSTOWN</h4>
 										</div>
 									</div>
 								</a>
-								<p>New Zealand</p>
+								<p class="hidden md:block">New Zealand</p>
 							</div>
 							
 							<!-- Card 6 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Mexico" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>MEXICO</h4>
 											<h4>CANCUN</h4>
 											<h4>TULUM</h4>
 										</div>
 									</div>
 								</a>
-								<p>Mexico</p>
+								<p class="hidden md:block">Mexico</p>
 							</div>
 							
 							<!-- Card 7 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Thailand" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>THAILAND</h4>
 											<h4>BANGKOK</h4>
 											<h4>PHUKET</h4>
 										</div>
 									</div>
 								</a>
-								<p>Thailand</p>
+								<p class="hidden md:block">Thailand</p>
 							</div>
 							
 							<!-- Card 8 -->
-							<div class="flex-none w-[350px] snap-center">
-								<a href="#" class="block relative h-[400px] rounded-lg overflow-hidden mb-4 group">
+							<div class="flex-none w-[200px] md:w-[350px] snap-center">
+								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
 									<img src={tog.src} alt="Ecuador" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
-									<div class="absolute inset-0 bg-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-										<div class="text-orange text-center space-y-2">
+									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+										<div class="text-orange text-center space-y-1 md:space-y-2">
 											<h4>ECUADOR</h4>
 											<h4>QUITO</h4>
 											<h4>GALAPAGOS</h4>
 										</div>
 									</div>
 								</a>
-								<p>Ecuador</p>
+								<p class="hidden md:block">Ecuador</p>
 							</div>
 						</div>
 					</div>
@@ -711,15 +736,15 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</section>
 
 		<!-- VI GØR EN FORSKEL -->
-		<section class="relative py-20 bg-baggrund overflow-hidden">
-			<!-- Background decorative line -->
-			<div class="absolute inset-0 w-full h-full pointer-events-none">
+		<section class="relative py-20 bg-baggrund">
+			<!-- Background decorative line - extends beyond section -->
+			<div class="absolute left-0 right-0 w-full pointer-events-none" style="top: -200px; height: calc(100% + 400px);">
 				<img src={slange.src} alt="" class="w-full h-full object-cover opacity-30" />
 			</div>
 
 			<div class="relative z-10 px-8 md:px-16 lg:px-24">
 				<!-- Header -->
-				<div class="text-center mb-12">
+				<div class="text-center mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">
 					<h2 class="font-bold mb-4">VI GØR EN FORSKEL</h2>
 					<p class="mx-auto">
 						Vi tror på at alle kan gøre en forskel - selv en højskole i Danmark.<br>
@@ -728,7 +753,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 				</div>
 
 				<!-- Image with stats -->
-				<div class="relative mx-auto mb-8">
+				<div class="relative mx-auto mb-8 opacity-0 scale-95 intersect:scale-100 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<img src={traer.src} alt="Skov" class="w-full rounded-lg" />
 					
 					<!-- Stats overlay -->
@@ -736,12 +761,12 @@ Det er bestemt noget man skulle opleve(-:</p>
 						<div class="flex items-center gap-8 md:gap-16 text-white">
 							<div class="text-center">
 								<h3 class="font-bold mb-2">106.785 m²</h3>
-								<p>fredet regnskov</p>
+								<p class="hidden md:block">fredet regnskov</p>
 							</div>
 							<div class="w-px h-20 bg-white"></div>
 							<div class="text-center">
 								<h3 class="font-bold mb-2">50 træer</h3>
-								<p>plantet pr. elev</p>
+								<p class="hidden md:block">plantet pr. elev</p>
 							</div>
 						</div>
 					</div>
@@ -753,7 +778,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 				</div>
 
 				<!-- Bottom section -->
-				<div class="mt-16 max-w-4xl">
+				<div class="mt-16 max-w-4xl opacity-0 translate-y-10 intersect:translate-y-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-400">
 					<h3 class="font-bold mb-8">UFORGLEMMELIGT<br>HØJSKOLEOPHOLD I UDLANDET</h3>
 					<div class="space-y-4">
 						<p>
@@ -776,11 +801,12 @@ Det er bestemt noget man skulle opleve(-:</p>
 		<!-- EN REJSE HØJSKOLE FYLDT MED OPLEVELSER -->
 		<section class="py-20 bg-baggrund">
 			<div class="container mx-auto px-8">
-				<h2 class="mb-12">EN REJSE HØJSKOLE FYLDT MED OPLEVELSER</h2>
+				<h2 class="mb-12 opacity-0 intersect:opacity-100 intersect:animate-fade-down intersect-once">EN REJSE HØJSKOLE FYLDT MED OPLEVELSER</h2>
 				
-				<div class="grid md:grid-cols-2 gap-12">
+				<!-- Desktop: 2 columns with parallax -->
+				<div class="hidden md:grid md:grid-cols-2 gap-12">
 					<!-- Billeder venstre side - 4 billeder -->
-					<div id="parallax-container" class="space-y-8">
+					<div id="parallax-container" class="space-y-8 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
 						<img src={tog.src} alt="Billede 1" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
 						<img src={tog.src} alt="Billede 2" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
 						<img src={tog.src} alt="Billede 3" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
@@ -788,7 +814,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 					</div>
 
 					<!-- Tekst højre side - 5 tekster -->
-					<div class="space-y-8">
+					<div class="space-y-8 opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 						<div class="bg-white p-8 rounded-lg">
 							<h1 class="text-orange opacity-50 text-right -mt-4">#01</h1>
 							<h4 class="mb-4 uppercase">Teambuilding</h4>
@@ -820,12 +846,56 @@ Det er bestemt noget man skulle opleve(-:</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- Mobile: Single column alternating -->
+				<div class="md:hidden space-y-6">
+					<!-- #01 - Text first -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#01</h1>
+						<h4 class="mb-4 uppercase">Teambuilding</h4>
+						<p>Hvorfor tage på et kedeligt kursus i Danmark, når du kan rejse ud i verden og udvikle dig samtidig! Du rejser sammen med andre unge voksne og lærer en hel masse om samarbejde, relationer, fællesskab, konflikter, styrker og stærke teams. Du får ikke blot rejse-erfaring på cv'et, men også et væld af brugbare redskaber til studie eller karriere.</p>
+					</div>
+					<img src={tog.src} alt="Teambuilding" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #02 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#02</h1>
+						<h4 class="mb-4 uppercase">Kulturoplevelser</h4>
+						<p>Har du lyst til at dykke ned i nye kulturer, og være en del af projekter, hvor du kommer tættere på de lokale? På højskolerejen får du mulighed for at engagere dig i meningsfulde kulturprojekter og aktiviteter, der åbner døre til oplevelser, du ellers aldrig ville få. Vi får også ført kulturer og hverdagsliv, som kun opslår, når man deler tiden med mennesker, der bor der.</p>
+					</div>
+					<img src={tog.src} alt="Kulturoplevelser" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #03 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#03</h1>
+						<h4 class="mb-4 uppercase">Friuger - et væld af muligheder</h4>
+						<p>Efter spændende og lærerige undervisningsforløb, har vi sat af ter hviken højskole rejse du vælger – lægd en eller flere friuger ind. Her har i mulighed for selv at tage styringen og udforske det land, kontinent eller ejre du befinder os i. Friugerne bliver brugt på forskellige vis og oftest deler holdet sig op i lidt mindre grupper for at tage på et trip – måde gange rejser hele holdet sammen på en fed friuge.</p>
+					</div>
+					<img src={tog.src} alt="Friuger" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #04 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#04</h1>
+						<h4 class="mb-4 uppercase">Spændende kulturoplevelser</h4>
+						<p>Kulturen er vigtig at opleve, når man befinder sig i et nyt land. Det giver indblik i nye måder at leve på, forskellige traditioner, normer, værdier og livsfilosofier. Tænk hvilket indblik, du ikke kan læse dig til i en bog eller se i et rejseprogram. På vores højskole ture kan du opleve alt fra ældgamle Hindutemplar i Indien, surfsulturen på Hawaii, Mayandianseme i Guatemala, de gamle inkaterier i Mexico, buddhisme i Thailand, leplantsger i Sri Lanka og kakaofarme i Costa Rica</p>
+					</div>
+					<img src={tog.src} alt="Spændende kulturoplevelser" class="w-full aspect-square object-cover rounded-lg opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-100" />
+
+					<!-- #05 -->
+					<div class="bg-white p-6 rounded-lg opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
+						<h1 class="text-orange opacity-50 text-right -mt-2 text-6xl">#05</h1>
+						<h4 class="mb-4 uppercase">Vilde naturoplevelser</h4>
+						<p>Hvis nogen tir et vardan oplevelse er det på højskole i udlandet med vores grupper. Prøv nogle vilde naturoplevelser. Mange af de destinationer, hvor vi tager hen, byder på atemberrånde natur og fantastiske og eventydlig haver. Det kan være alt fra snorklering i Caribien, river rafting i Thailand, gamle træktopper efter Incatrails i Peru, fjelde og trekking i Himalayan bjerge i Nepal, sejle kajak i marine nationalparker, dykke med manta rays på Hawaii, vandre i New Zealands fantastiske nationalparker eller bestign vulkaner i Ecuador. At komme tæt på Jordens bjerne. Alle vores rejser er fyldt mad storslåede naturoplevelser.</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<script is:inline>
-			// Simpel parallax scrolling - kun når sektionen er synlig
+			// Simpel parallax scrolling - kun på desktop
 			(function() {
+				if (window.innerWidth < 768) return; // Skip on mobile
+
 				const container = document.getElementById('parallax-container');
 				if (!container) {
 					console.log('Parallax container ikke fundet');
@@ -853,7 +923,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 			})();
 		</script>
 
-		<script>
+		<script is:inline>
 			// Rotate quotes every 5 seconds
 			function rotateQuotes() {
 				const quotes = document.querySelectorAll('.quote');
@@ -874,7 +944,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 		</script>
 
 		<!-- BUND SECTION -->
-		<section class="w-full">
+		<section class="w-full opacity-0 intersect:opacity-100 transition-opacity duration-1000 ease-out intersect-once">
 			<img src={bund.src} alt="" class="w-full h-auto" />
 		</section>
 
