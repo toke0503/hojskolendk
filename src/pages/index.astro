@@ -2,6 +2,20 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import hero from "../assets/images/herobillede.webp";
 import tog from "../assets/images/tog.webp";
+import tommerflode from "../assets/images/tommerflode.jpg";
+import snorkel from "../assets/images/snorkel.jpg";
+import telt from "../assets/images/telt.jpg";
+import pabjergImg from "../assets/images/pabjerg.jpg";
+import pascooter from "../assets/images/scooter.jpg";
+import firepabad from "../assets/images/firepabad.jpg";
+import foranisbjerg from "../assets/images/foranisbjerg.jpg";
+import forantempel from "../assets/images/forantempel.jpg";
+import ipool from "../assets/images/ipool.jpg";
+import japantempel from "../assets/images/japantempel.png";
+import vandfald from "../assets/images/vandfald.jpg";
+import skalgirls from "../assets/images/skalgirls.jpg";
+import strand from "../assets/images/strand.jpg";
+import solnedgang from "../assets/images/solnedgang.jpg";
 import orangeBolger from "../assets/images/orangebolger.webp";
 import orangeBolger2 from "../assets/images/orangebolger2.webp";
 import fly from "../assets/images/fly.webp";
@@ -11,6 +25,7 @@ import sky1 from "../assets/images/sky1.webp";
 import sky2 from "../assets/images/sky2.webp";
 import sky3 from "../assets/images/sky3.webp";
 import sky4 from "../assets/images/sky4.webp";
+import videoFile from "../assets/images/YTDown.com_YouTube_Media_nRqEfAs1xm4_001_1080p.mp4";
 import traer from "../assets/images/traer.webp";
 import slange from "../assets/images/slange.png";
 import bund from "../assets/images/bund.png";
@@ -81,35 +96,35 @@ import Button from "../components/Button.astro";
 				<div class="md:col-span-6 relative overflow-hidden opacity-0 translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once delay-200">
 					<div class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory">
 						<div class="flex-none w-[400px] snap-center relative group">
-							<img src={tog.src} alt="Højskole oplevelse 1" class="w-full h-[500px] object-cover rounded-lg">
+							<img src={tommerflode.src} alt="Højskole oplevelse 1" class="w-full h-[500px] object-cover rounded-lg">
 							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
 								<p class="text-black text-6xl font-bold mb-4">01</p>
 								<p class="text-black text-xl">Du bliver en del af et fantastisk fællesskab med et stærkt sammenhold</p>
 							</div>
 						</div>
 						<div class="flex-none w-[400px] snap-center relative group">
-							<img src={tog.src} alt="Højskole oplevelse 2" class="w-full h-[500px] object-cover rounded-lg">
+							<img src={snorkel.src} alt="Højskole oplevelse 2" class="w-full h-[500px] object-cover rounded-lg">
 							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
 								<p class="text-black text-6xl font-bold mb-4">02</p>
 								<p class="text-black text-xl">Du får masser af vilde naturoplevelser, adventure og spændende kulturmøder</p>
 							</div>
 						</div>
 						<div class="flex-none w-[400px] snap-center relative group">
-							<img src={tog.src} alt="Højskole oplevelse 3" class="w-full h-[500px] object-cover rounded-lg">
+							<img src={telt.src} alt="Højskole oplevelse 3" class="w-full h-[500px] object-cover rounded-lg">
 							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
 								<p class="text-black text-6xl font-bold mb-4">03</p>
 								<p class="text-black text-xl">Du opdager nye og stærke sider af dig selv, flytter grænser og får mere selvtillid</p>
 							</div>
 						</div>
 						<div class="flex-none w-[400px] snap-center relative group">
-							<img src={tog.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
+							<img src={pabjergImg.src} alt="Højskole oplevelse 4" class="w-full h-[500px] object-cover rounded-lg">
 							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
 								<p class="text-black text-6xl font-bold mb-4">04</p>
 								<p class="text-black text-xl">Du rejser altid med danske passionerede rejseledere og engagerede undervisere</p>
 							</div>
 						</div>
 						<div class="flex-none w-[400px] snap-center relative group">
-							<img src={tog.src} alt="Højskole oplevelse 5" class="w-full h-[500px] object-cover rounded-lg">
+							<img src={pascooter.src} alt="Højskole oplevelse 5" class="w-full h-[500px] object-cover rounded-lg">
 							<div class="absolute inset-0 bg-white/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-start p-8 rounded-lg">
 								<p class="text-black text-6xl font-bold mb-4">05</p>
 								<p class="text-black text-xl">Du får et uforglemmeligit, unikt og trygt rejseeventyr for livet</p>
@@ -141,8 +156,13 @@ import Button from "../components/Button.astro";
 							<video 
 								class="absolute inset-0 w-full h-full object-cover"
 								controls
-								poster={tog.src}>
-								<source src="/placeholder.mp4" type="video/mp4">
+								autoplay
+								muted
+								playsinline
+								loop
+								poster={tog.src}
+								id="promotional-video">
+								<source src={videoFile} type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
 						</div>
@@ -600,7 +620,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 1 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Dykkercertifikat på Nusa Penida" class="w-full h-full object-cover">
+									<img src={firepabad.src} alt="Dykkercertifikat på Nusa Penida" class="w-full h-full object-cover">
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -616,7 +636,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 2 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Poon Hill - Nepal" class="w-full h-full object-cover">
+									<img src={foranisbjerg.src} alt="Poon Hill - Nepal" class="w-full h-full object-cover">
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -632,7 +652,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 3 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Japan" class="w-full h-full object-cover">
+									<img src={forantempel.src} alt="Japan" class="w-full h-full object-cover">
 									<!-- Overlay - always visible on mobile, hover on desktop -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -648,7 +668,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 4 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Bali" class="w-full h-full object-cover">
+									<img src={pabjergImg.src} alt="Bali" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -664,7 +684,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 5 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="New Zealand" class="w-full h-full object-cover">
+									<img src={ipool.src} alt="New Zealand" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -680,7 +700,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 6 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Mexico" class="w-full h-full object-cover">
+									<img src={japantempel.src} alt="Mexico" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -696,7 +716,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 7 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Thailand" class="w-full h-full object-cover">
+									<img src={tommerflode.src} alt="Thailand" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -712,7 +732,7 @@ Det er bestemt noget man skulle opleve(-:</p>
 							<!-- Card 8 -->
 							<div class="flex-none w-[200px] md:w-[350px] snap-center">
 								<a href="#" class="block relative h-[250px] md:h-[400px] rounded-lg overflow-hidden mb-4 group">
-									<img src={tog.src} alt="Ecuador" class="w-full h-full object-cover">
+									<img src={snorkel.src} alt="Ecuador" class="w-full h-full object-cover">
 									<!-- Hover overlay -->
 									<div class="absolute inset-0 bg-white/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 										<div class="text-orange text-center space-y-1 md:space-y-2">
@@ -807,10 +827,10 @@ Det er bestemt noget man skulle opleve(-:</p>
 				<div class="hidden md:grid md:grid-cols-2 gap-12">
 					<!-- Billeder venstre side - 4 billeder -->
 					<div id="parallax-container" class="space-y-8 opacity-0 -translate-x-full intersect:translate-x-0 intersect:opacity-100 transition-all duration-1000 ease-out intersect-once">
-						<img src={tog.src} alt="Billede 1" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
-						<img src={tog.src} alt="Billede 2" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
-						<img src={tog.src} alt="Billede 3" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
-						<img src={tog.src} alt="Billede 4" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
+						<img src={vandfald.src} alt="Vandfald" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
+						<img src={skalgirls.src} alt="Skalsnorkling" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
+						<img src={strand.src} alt="Strand" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
+						<img src={solnedgang.src} alt="Solnedgang" style="width: 80%; aspect-ratio: 1/1;" class="object-cover rounded-lg" />
 					</div>
 
 					<!-- Tekst højre side - 5 tekster -->
